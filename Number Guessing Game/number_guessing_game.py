@@ -13,8 +13,9 @@ else:
 secret_number = random.randint(1, top_of_range)
 
 guess = 0
-
+guesses = 0
 while guess != secret_number:
+    guesses += 1
     guess = input("Make a guess: ")
     if guess.isdigit():
         guess = int(guess)
@@ -23,7 +24,7 @@ while guess != secret_number:
         continue
 
     if guess == secret_number:
-        print("You got it!")
+        print(f"You got it in {guesses} guesses!")
     elif guess > secret_number:
         print("You were above the number!")
     else:
